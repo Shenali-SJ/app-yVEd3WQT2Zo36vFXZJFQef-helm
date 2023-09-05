@@ -1,0 +1,41 @@
+projectId: app-yVEd3WQT2Zo36vFXZJFQef
+appName: sanuka
+description: This a test project
+version: "1.0"
+hostName: example.test
+clusterURL: default
+clusterIPs:
+- 190.89.89.0
+monitoring: true
+microservices:
+  CartService:
+    serviceName: cartservice
+    avgReplicas: 1
+    minReplicas: 11
+    maxReplicas: 1
+    dockerImage: serser
+    containerPort: 1
+  OrderService:
+    serviceName: orderservice
+    avgReplicas: 2
+    minReplicas: 2
+    maxReplicas: 2
+    dockerImage: serer
+    containerPort: 2
+    serviceEvaluation:
+      kubeConfigType:
+      - statefulSetBased
+  UserService:
+    serviceName: userservice
+    avgReplicas: 1
+    minReplicas: 1
+    maxReplicas: 1
+    dockerImage: sdfsdf
+    containerPort: 1
+evaluationResult:
+  language: Java
+  database: MySQL
+  microservices:
+  - CartService
+  - OrderService
+  - UserService
